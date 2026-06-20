@@ -1,0 +1,7 @@
+
+.gradient {
+  background: linear-gradient(0deg, 
+    var(--color-gradient-1), 
+    var(--color-gradient-2)
+  );
+}

@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+
+@theme base {
+--color-harvest-gold-50: #fbf4e9;
+--color-harvest-gold-100: #f8e9d3;
+--color-harvest-gold-200: #f1d3a7;
+--color-harvest-gold-300: #eabe7b;
+--color-harvest-gold-400: #e2a850;
+--color-harvest-gold-500: #db9224;
+--color-harvest-gold-600: #af751d;
+--color-harvest-gold-700: #845815;
+--color-harvest-gold-800: #583a0e;
+--color-harvest-gold-900: #2c1d07;
+--color-harvest-gold-950: #1f1405;
+--white: #ffffff;
+--dark: #171717;
+--color-grey-olive-800: #333333;
+--color-grey-olive-200: #CCCCCC;
+}
+
+@theme light {
+  --color-bg: var(--white);
+  --color-bg-to: var(--color-harvest-gold-200);
+  --color-text: var(--dark);
+  --color-card: var(--color-harvest-gold-100);
+  --color-card-from: var(--color-harvest-gold-300);
+  --color-card-to: var(--color-harvest-gold-300);
+  --color-border-color: var(--color-harvest-gold-500);
+  --color-hover-button-color: var(--color-harvest-gold-400);
+  --color-button-color: var(--color-harvest-gold-500);
+  --color-input-color: var(--color-grey-olive-200);
+
+  --color-gradient-1: var(--white);
+  --color-gradient-2: var(--color-harvest-gold-200);
+}
+
+@theme dark {
+  --color-bg: var(--dark);
+  --color-bg-to: var(--color-harvest-gold-950);
+  --color-text: var(--white);
+  --color-card: var(--color-harvest-gold-800);
+  --color-card-from: var(--color-harvest-gold-800);
+  --color-card-to: var(--color-harvest-gold-600);
+  --color-button-color: var(--color-harvest-gold-600);
+  --color-border-color: var(--color-harvest-gold-500);
+  --color-hover-button-color: var(--color-harvest-gold-400);
+  --color-input-color: var(--color-grey-olive-800);
+
+  --color-gradient-1: var(--dark);
+  --color-gradient-2: var(--dark);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+select {
+  background: var(--color-input-color);
+  margin: 0.2rem;
+  padding: 0.3rem;
+  border: 2px solid var(--color-border-color);
+  color: var(--color-text);
+  border-radius: 0.25rem;
+}
+
+textarea {
+  background: var(--color-input-color);
+  border: 2px solid var(--color-border-color);
+  color: var(--color-text);
+}
+
+input {
+  background: var(--color-input-color);
+  border: 2px solid var(--color-border-color);
+  color: var(--color-text);
+}
