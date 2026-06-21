@@ -11,6 +11,7 @@ export const useAuthRedirect = (to: string = '/presentation/lib') => {
   }, [])
 
   useEffect(() => {
+    console.log(me)
     if (me) navigate(to)
   }, [me])
 }

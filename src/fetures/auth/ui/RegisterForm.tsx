@@ -35,7 +35,7 @@ export const RegisterForm = () => {
                 {isLoading ? "Loading..." : "Register"}
             </Button>
             
-            <Button className="w-full  my-4"
+            <Button type="button" className="w-full  my-4"
             onClick={() => navigate("/auth/login")}
             >Already have an account
             </Button>
