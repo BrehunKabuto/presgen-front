@@ -24,8 +24,10 @@ export const useUserStore = create<userStore>((set) => ({
                 me: user
             })
         }
-        catch(e){
-            console.error(e)
+        catch(e: any){
+             if (e?.response?.status !== 401) {
+        console.error(e)
+    }
 
         }finally{
             set({isLoading: false})

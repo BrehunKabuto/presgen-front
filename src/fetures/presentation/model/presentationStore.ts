@@ -25,25 +25,27 @@ export const usePresentationStore = create<PresentationStore>((set)=> ({
     isLoading: false,
     presentations: [],
    
-    generate: async (creds) =>  {
+        generate: async (creds) =>  {
 
-        try{
-            set({isLoading: true})
-            const presentation = await presentationApi.generate(creds)
-            
-            set({
-                isLoading: false,
-                presentation: presentation
-            })
-        }
-        catch(e)
-        {
+            try{
+                set({isLoading: true})
+                const presentation = await presentationApi.generate(creds)
+                
+                set({
+                    isLoading: false,
+                    presentation: presentation
+                })
+            }
+            catch(e: any)
+            {
+            if (e?.response?.status !== 401) {
             console.error(e)
         }
-        finally{
-            set({isLoading: false})
-        }
-    },
+            }
+            finally{
+                set({isLoading: false})
+            }
+        },
 
     getAllByUser: async () => {
         try{
@@ -56,9 +58,11 @@ export const usePresentationStore = create<PresentationStore>((set)=> ({
                     presentations: presentations
                 }
             )
-        }catch(e){
+        }catch(e: any){
 
-            console.error(e)
+            if (e?.response?.status !== 401) {
+        console.error(e)
+    }
         }
         finally{
             set({isLoading: false})
@@ -75,8 +79,10 @@ export const usePresentationStore = create<PresentationStore>((set)=> ({
                 presentations: state.presentations.filter((p) => p.id !== +id)
             }))
         }
-        catch(e){
-            console.error(e)
+        catch(e: any){
+            if (e?.response?.status !== 401) {
+        console.error(e)
+    }
         }
         finally{
             set({isLoading: false})
