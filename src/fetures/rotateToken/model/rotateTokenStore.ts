@@ -23,7 +23,10 @@ export const useRotateTokenStore = create<RotateTokenStore>((set) => ({
         catch(e){
             tokenService.remove()
             console.error(e)
-            window.location.href = "/auth/login"
+           const publicRoutes = ['/', '/auth/login', '/auth/register']
+    if (!publicRoutes.includes(window.location.pathname)) {
+        window.location.href = "/auth/login"
+    }
             
         }
         finally{
