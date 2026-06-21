@@ -22,6 +22,10 @@
         async (error: AxiosError) => {
             if(error.response?.status === 401)
             {
+            const publicRoutes = ['/', '/auth/login', '/auth/register']
+            if (publicRoutes.includes(window.location.pathname)) {
+                return Promise.reject(error)
+            }
                 const originalRequest = error.config
             
 
